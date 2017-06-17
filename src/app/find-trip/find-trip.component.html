@@ -4,8 +4,10 @@
     You can find your booking by filling out your family name and the booking code in your booking confirmation.
   </p>
 
+  <!--  retrieve booking form-->
   <form [formGroup]="retrieveBookingForm" (ngSubmit)="onRetrieveBooking()" role="form">
 
+    <!--  booking code -->
     <p>
       <label for="bookingCode">Booking code</label>
       <input id="bookingCode" #refbookingCode type="text" name="bookingCode" formControlName="bookingCode" />
@@ -20,6 +22,7 @@
       </span>
     </p>
 
+    <!-- family name -->
     <p>
       <label for="familyNamee">Family name</label>
       <input id="familyNamee" type="text" #refFamilyName name="familyName" formControlName="familyName" />

@@ -15,8 +15,8 @@ export class FindTripComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder) { }
 
   onRetrieveBooking() {
+    // pass form values to retrieveBookingFormData object
     this.retrieveBookingFormData = this.retrieveBookingForm.value;
-    console.log(this.retrieveBookingForm.value);
   }
 
   ngOnInit() {
