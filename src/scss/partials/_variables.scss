@@ -1,0 +1,18 @@
+/* paths */
+$images-folder-path: "/../../assets/images/";
+
+/* used color */
+$dark-blue: #003145;
+$red: #d40504;
+$grey: #767676;
+
+/* font */
+$general-font-family: "Excellence In Motion", "Lucida Grande","Lucida Sans Unicode","Helvetica Neue","Helvetica",verdana,arial,sans-serif;
+
+/*break-points: https://www.sitepoint.com/managing-responsive-breakpoints-sass/ */
+$screen-sm-min: 768px;
+$screen-xs-max: ($screen-sm-min - 1);
+$screen-md-min: 992px;
+$screen-sm-max: ($screen-md-min - 1);
+$screen-lg-min: 1200px;
+$screen-md-max: ($screen-lg-min - 1);

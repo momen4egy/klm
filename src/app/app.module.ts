@@ -1,14 +1,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { FindTripComponent } from './find-trip/find-trip.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FindTripComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

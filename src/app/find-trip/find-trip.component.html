@@ -1,0 +1,40 @@
+<section class="retrieve-booking-wrapper">
+  <h2>RETRIVE YOUR BOOKING</h2>
+  <p>
+    You can find your booking by filling out your family name and the booking code in your booking confirmation.
+  </p>
+
+  <form [formGroup]="retrieveBookingForm" (ngSubmit)="onRetrieveBooking()" role="form">
+
+    <p>
+      <label for="bookingCode">Booking code</label>
+      <input id="bookingCode" #refbookingCode type="text" name="bookingCode" formControlName="bookingCode" />
+      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('minlength')">
+        Booking code must be at least 5 characters long.
+      </span>
+      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('maxlength')">
+        Booking code must not not be more than 6 characters long.
+      </span>
+      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('pattern')">
+        Booking code must only contains characters and numbers between 2 and 9.
+      </span>
+    </p>
+
+    <p>
+      <label for="familyNamee">Family name</label>
+      <input id="familyNamee" type="text" #refFamilyName name="familyName" formControlName="familyName" />
+      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('minlength')">
+        Name must be at least 2 characters long.
+      </span>
+      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('maxlength')">
+        Name must not not be more than 30 characters long.
+      </span>
+      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('pattern')">
+        Name must only contains characters.
+      </span>
+    </p>
+
+    <input type="submit" value="Retrieve booking" [disabled]="!retrieveBookingForm.valid" />
+
+  </form>
+</section>
