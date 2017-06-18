@@ -11,13 +11,13 @@
     <p>
       <label for="bookingCode">Booking code</label>
       <input id="bookingCode" #refbookingCode type="text" name="bookingCode" formControlName="bookingCode" />
-      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('minlength')">
+      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('minlength')" role="alert">
         Booking code must be at least 5 characters long.
       </span>
-      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('maxlength')">
+      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('maxlength')" role="alert">
         Booking code must not not be more than 6 characters long.
       </span>
-      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('pattern')">
+      <span class="error" *ngIf="retrieveBookingForm.controls['bookingCode'].hasError('pattern')" role="alert">
         Booking code must only contains characters and numbers between 2 and 9.
       </span>
     </p>
@@ -26,13 +26,13 @@
     <p>
       <label for="familyNamee">Family name</label>
       <input id="familyNamee" type="text" #refFamilyName name="familyName" formControlName="familyName" />
-      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('minlength')">
+      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('minlength')" role="alert">
         Name must be at least 2 characters long.
       </span>
-      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('maxlength')">
+      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('maxlength')" role="alert">
         Name must not not be more than 30 characters long.
       </span>
-      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('pattern')">
+      <span class="error" *ngIf="retrieveBookingForm.controls['familyName'].hasError('pattern')" role="alert">
         Name must only contains characters.
       </span>
     </p>
