@@ -25,11 +25,15 @@
       &:first-child {
         margin-top: 0;
       }
+    }
 
-      .error {
-        color: $red;
-        margin-top: px_to_em(5);
-      }
+    .error {
+      color: $red;
+      margin-top: px_to_em(5);
+    }
+
+    .valid {
+      color: $green;
     }
 
     input[type="text"] {

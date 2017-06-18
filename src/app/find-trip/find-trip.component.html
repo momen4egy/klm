@@ -7,6 +7,12 @@
   <!--  retrieve booking form-->
   <form [formGroup]="retrieveBookingForm" (ngSubmit)="onRetrieveBooking()" role="form">
 
+    <p class="error" *ngIf="errorMessages.code && errorMessages.code === 'bookingNotExist'">
+      Booking is not exist. please check your booking code or family name and try again.
+    </p>
+    <p class="valid" *ngIf="errorMessages.code && errorMessages.code === 'bookingExist'">
+       Your booking is exist.
+    </p>
     <!--  booking code -->
     <p>
       <label for="bookingCode">Booking code</label>
