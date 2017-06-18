@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { BookingDataService } from '../services/booking-data.service';
+import { BookingDataService } from './../services/booking-data.service';
 
 @Component({
   selector: 'app-find-trip',
@@ -9,21 +9,20 @@ import { BookingDataService } from '../services/booking-data.service';
 })
 export class FindTripComponent implements OnInit {
 
-  retrieveBookingForm: FormGroup; //RetrieveBooking of type FormGroup
-  errorMessages: object = { };
+  retrieveBookingForm: FormGroup; //RetrieveBookingForm of type FormGroup
+  errorMessages: object = { }; //object contain error message code
 
-  //create instance of formbuilder
+  //create instance of formbuilder and booking data service
   constructor(private _formBuilder: FormBuilder, private _bookingDataService: BookingDataService) { }
 
   onRetrieveBooking() {
-    // pass form values to retrieveBookingFormData object
+    // get booking data from service
     this._bookingDataService.fetchData().subscribe(
       data => {
+        //when bookingCode and familyName match with service data show booking exist message otherwise show an error
         if (this.retrieveBookingForm.value.bookingCode.toLowerCase() === data.bookingCode.toLowerCase() && this.retrieveBookingForm.value.familyName.toLowerCase() === data.passengers.lastName.toLowerCase()) {
-          // console.log(data);
           this.errorMessages['code'] = 'bookingExist';
         } else {
-          // console.log('Booking does not exist, please check your booking code or family name')
           this.errorMessages['code'] = 'bookingNotExist';
         }
       }
