@@ -1,17 +1,23 @@
 import { TestBed, async } from '@angular/core/testing';
 
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
 import { FindTripComponent } from './find-trip/find-trip.component';
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [ReactiveFormsModule],
+      imports: [
+        ReactiveFormsModule,
+        HttpModule
+      ],
       declarations: [
         AppComponent,
         FindTripComponent
       ],
+      providers: []
     }).compileComponents();
   }));
 
