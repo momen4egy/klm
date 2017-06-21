@@ -1,6 +1,6 @@
-import { TestBed, inject, fakeAsync  } from '@angular/core/testing';
+import { TestBed, inject  } from '@angular/core/testing';
 import { HttpModule, XHRBackend, Response, ResponseOptions } from '@angular/http';
-import {MockBackend, MockConnection} from '@angular/http/testing';
+import {MockBackend } from '@angular/http/testing';
 import { BookingDataService } from './booking-data.service';
 
 describe('BookingDataService', () => {
