@@ -167,7 +167,7 @@ describe('FindTripComponent', () => {
 
     }));
 
-    it('should set errorMessages code to bookingExist when booking code and family name user input is exist', inject([XHRBackend], (backend) => {
+    it('should set errorMessages code to bookingExist when booking code and family name user input is exist', () => {
 
       const userInput = {
         bookingCode: 'PZIGZ3',
@@ -180,9 +180,9 @@ describe('FindTripComponent', () => {
       component.onRetrieveBooking();
       expect(component.errorMessages['code']).toBe('bookingExist');
 
-    }));
+    });
 
-    it('should set errorMessages code to bookingNotExist when booking code and family name user input is NOT exist', inject([XHRBackend], (backend) => {
+    it('should set errorMessages code to bookingNotExist when booking code and family name user input is NOT exist', () => {
 
       const userInput = {
         bookingCode: 'UV57Z3',
@@ -195,7 +195,7 @@ describe('FindTripComponent', () => {
       component.onRetrieveBooking();
       expect(component.errorMessages['code']).toBe('bookingNotExist');
 
-    }));
+    });
 
   });
 
