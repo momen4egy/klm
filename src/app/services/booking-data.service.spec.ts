@@ -157,6 +157,14 @@ describe('BookingDataService', () => {
       expect(res).toBeDefined();
     });
 
+
+  }));
+
+  it('should get booking ', inject([BookingDataService], (bookingDataService) => {
+
+    bookingDataService.fetchData().subscribe((res) => {
+      expect(res).toBeUndefined();
+    });
   }));
 
 });
